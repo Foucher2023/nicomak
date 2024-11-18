@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thanks{% endblock %}
+
+{% block body %}
+    <h1>Thanks</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ thank.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ thank.Text }}</td>
+            </tr>
+            <tr>
+                <th>TkDate</th>
+                <td>{{ thank.TkDate ? thank.TkDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_thanks_index') }}">back to list</a>
+
+    <a href="{{ path('app_thanks_edit', {'id': thank.id}) }}">edit</a>
+
+    {{ include('thanks/_delete_form.html.twig') }}
+{% endblock %}
