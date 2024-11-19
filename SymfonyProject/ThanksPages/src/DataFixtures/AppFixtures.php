@@ -1,7 +1,9 @@
 <?php
 
 namespace App\DataFixtures;
+use DateTime;
 use App\Entity\User;
+use App\Entity\Thanks;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -48,17 +50,30 @@ class AppFixtures extends Fixture
         $manager->persist($user5);
         $manager->persist($user6);
 
+        $thanks1 = new Thanks();
+        $thanks1->setTksBy($user1);
+        $thanks1->setText('merci de m\'avoir aidé auprès du client Spatio');
+        $thanks1->setTksFor($user3);
+        $dateTimeFixture1 = new DateTime('2024-11-01 10:00:00');
+        $thanks1->setTkDate($dateTimeFixture1);
 
+        $thanks2 = new Thanks();
+        $thanks2->setTksBy($user5);
+        $thanks2->setText('merci pour la bonne humeur que tu as tout les jours ');
+        $thanks2->setTksFor($user4);
+        $dateTimeFixture2= new DateTime('1999-03-01 08:00:00');
+        $thanks2->setTkDate($dateTimeFixture2);
 
+        $thanks3 = new Thanks();
+        $thanks3->setTksBy($user6);
+        $thanks3->setText('merci pour tes explications, elles m\'ont permis de gagner beaucoup de temps');
+        $thanks3->setTksFor($user2);
+        $dateTimeFixture3= new DateTime('2024-11-19 16:00:00');
+        $thanks3->setTkDate($dateTimeFixture3);
 
-
-
-
-
-
-
-
-
+        $manager->persist($thanks1);
+        $manager->persist($thanks2);
+        $manager->persist($thanks3);
         
         $manager->flush();
     }

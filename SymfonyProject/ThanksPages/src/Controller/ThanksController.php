@@ -17,9 +17,10 @@ class ThanksController extends AbstractController
     #[Route('/', name: 'app_thanks_index', methods: ['GET'])]
     public function index(ThanksRepository $thanksRepository): Response
     {
+        $thanks = $thanksRepository->findBy([], ['TkDate' => 'DESC']);
         return $this->render('thanks/index.html.twig', [
-            'thanks' => $thanksRepository->findAll(),
-        ]);
+        'thanks' => $thanks,
+    ]);
     }
 
     #[Route('/new', name: 'app_thanks_new', methods: ['GET', 'POST'])]
