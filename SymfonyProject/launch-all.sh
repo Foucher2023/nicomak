@@ -20,8 +20,7 @@ rm -rf vendor/
 composer install
 
 # Start Symfony server
-symfony server:stop
-symfony serve -d --no-tls
+./refresh-server.sh
 
 # Run database reset script
 ./reset-Database.sh

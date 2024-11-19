@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Thanks index{% endblock %}
+{% block title %}liste des merci{% endblock %}
 
 {% block body %}
-    <h1>Thanks index</h1>
+    <h1>la liste complète des «merci»</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Merci envoyer par</th>
-                <th>Text</th>
-                <th>pour<th>
-                <th>TkDate</th>
+                <th>De quel salarié il provient</th>
+                <th>Pourquoi le salarié est remercié</th>
+                <th>Quel salarié est remercié<th>
+                <th>Date du remerciement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -34,5 +34,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_thanks_new') }}">Create new</a>
+    <a href="{{ path('app_thanks_new') }}">Dire un merci</a>
 {% endblock %}

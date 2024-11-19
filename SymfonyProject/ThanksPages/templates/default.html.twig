@@ -1,0 +1,33 @@
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'acceuille{% endblock %}
+
+{% block body %}
+    <div class="entreprise-container">
+    <!-- Image -->
+    <div class="image-section">
+        <img src="{{ entreprise.image_url }}" alt="{{ "icone de l'entreprise" }}" class="entreprise-image">
+    </div>
+
+    <!-- Title -->
+    <div class="title-section">
+        <h1 class="entreprise-title">{{ entreprise.title }}</h1>
+    </div>
+
+    <!-- Text -->
+    <div class="text-section">
+        <p class="entreprise-text">{{ entreprise.description1 }}</p>
+        <br>
+        <p class="entreprise-text">{{ entreprise.description2 }}</p> 
+        <br>
+    </div>
+
+    <!-- Button -->
+    <div class="button-section">
+        <a href="/thanks/" class="entreprise-button">Voir la liste des merci</a>
+    </div>
+</div>
+{% endblock %}
