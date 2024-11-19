@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+<div class="center-container">
+<div class="title-section">
+    <h1>Liste de tout les utilisateurs de cette application</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+        {% if users|length > 0 %}
+            <tr>
+                <th>Nom de l'utilisateur</th>
+                <th>Image de profil</th>
+                <th>actions</th>
+            </tr>
+            {% endif %}
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td><img src="{{ asset('img/avatar/' ~ user.img) }}" alt="User Avatar" class="user-avatar"></td>
+                <td>
+                <div class="button-section">
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">modifier</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5" class="text-section">Il n'y a pas d'utilisateur dans la base de donnée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

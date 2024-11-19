@@ -1,0 +1,46 @@
+/* General form container styling */
+.custom-form {
+    max-width: 600px;
+    margin: 0 auto; /* Centers the form */
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Form field group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Input fields and selects */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Styling for the submit button */
+.btn {
+    padding: 10px 20px;
+    background-color: #f8af7f;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f37929;
+}
+
+.user-avatar-Edit {
+    width: 16%; 
+    height: 16%; 
+    border-radius: 50%; 
+    object-fit: cover; 
+}

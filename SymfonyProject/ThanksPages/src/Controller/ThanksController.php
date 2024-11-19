@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Thanks;
+use App\Entity\User;
+use App\Repository\UserRepository;
 use App\Form\ThanksType;
 use App\Repository\ThanksRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -15,11 +17,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class ThanksController extends AbstractController
 {
     #[Route('/', name: 'app_thanks_index', methods: ['GET'])]
-    public function index(ThanksRepository $thanksRepository): Response
+    public function index(ThanksRepository $thanksRepository, UserRepository $userRepository): Response
     {
         $thanks = $thanksRepository->findBy([], ['TkDate' => 'DESC']);
+        $users = $userRepository->findAll();
+        //dd($thanks); 'TksByImg' , 'TksForImg'
+
         return $this->render('thanks/index.html.twig', [
         'thanks' => $thanks,
+        'users' => $users
     ]);
     }
 

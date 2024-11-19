@@ -1,0 +1,21 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/css_form.css') }}">
+{% endblock %}
+
+
+{{ form_start(form, { 'attr': { 'class': 'custom-form' } }) }}
+    <div class="form-group">
+        {{ form_row(form.name, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.password, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.img, { 'attr': { 'class': 'form-control' } }) }}
+        <img src="{{ asset('img/avatar/' ~ form.img.vars.value) }}" alt="User Avatar" class="user-avatar-Edit">
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}
+

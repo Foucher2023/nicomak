@@ -14,10 +14,10 @@ class ThanksType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('TksBy',EntityType::class,['class'=>User::class,'choice_label' => 'name'])
-            ->add('Text')
-            ->add('TksFor',EntityType::class,['class'=>User::class,'choice_label' => 'name'])
-            ->add('TkDate')
+            ->add('TksBy',EntityType::class,['class'=>User::class,'choice_label' => 'name', 'label' => 'De quel salarié il provient',])
+            ->add('Text',null,['label' => 'Pourquoi le salarié est remercié',])
+            ->add('TksFor',EntityType::class,['class'=>User::class,'choice_label' => 'name', 'label' => 'Quel salarié est remercié',])
+            ->add('TkDate',null,['label' => 'Date du remerciement', 'widget' => 'single_text',])
         ;
     }
 

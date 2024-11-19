@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ user.img }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+<div>
+    <a class="button-section" href="{{ path('app_user_index') }}">Retour a la liste</a>
+</div>
+<div>
+    <a class="button-section" href="{{ path('app_user_edit', {'id': user.id}) }}">modifier</a>
+    </div>
+
+{% endblock %}

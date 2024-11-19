@@ -12,6 +12,15 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        <!-- Image -->
+        {% if app.request.pathinfo != '/' %}
+    <div class="prime-logo">
+        <a href="/">
+            <img src="{{ asset('img/nicomak-logo-MD.png') }}" alt="{{ 'icone de l\'entreprise' }}" class="entreprise-image">
+        </a>
+    </div>
+{% endif %}
+
     </head>
     <body>
         {% block body %}{% endblock %}

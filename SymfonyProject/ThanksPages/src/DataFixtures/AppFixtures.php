@@ -31,7 +31,7 @@ class AppFixtures extends Fixture
         $user4 = new User();
         $user4->setName("Céline");
         $user4->setPassword("CeCe04");
-        $user4->setImg("avatar_myriam.png");
+        $user4->setImg("avatar_celine.png");
 
         $user5 = new User();
         $user5->setName("Alice");
@@ -41,7 +41,7 @@ class AppFixtures extends Fixture
         $user6 = new User();
         $user6->setName("Laetitia");
         $user6->setPassword("LaLa06");
-        $user6->setImg("avatar_Laetitia.png");
+        $user6->setImg("avatar_laetitia.png");
         
         $manager->persist($user1);
         $manager->persist($user2);

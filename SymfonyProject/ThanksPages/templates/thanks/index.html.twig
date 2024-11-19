@@ -4,18 +4,28 @@
 
 {% block body %}
 <div class="center-container">
-    <!-- Title Section -->
+
     <div class="title-section">
         <h1>La liste complète des Merci</h1>
     </div>
-    <!-- Button Section -->
+
     <div class="button-section">
         <a href="{{ path('app_thanks_new') }}">Ecrire un Merci</a>
     </div>
-    <!-- Table Section -->
+
     <table class="table">
         <thead>
             {% if thanks|length > 0 %}
+            <div class="filter-section">
+                <label for="userFilter">Filtrer par utilisateur:</label>
+                <select id="userFilter" onchange="filterThanks()">
+                    <option value="">Sélectionner un utilisateur</option>
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
             <tr>
                 <th>De quel salarié il provient</th>
                 <th>Pourquoi le salarié est remercié</th>
@@ -24,29 +34,53 @@
                 <th>Actions</th>
             </tr>
         {% endif %}
-
         </thead>
-        <tbody>
-        {% for thank in thanks %}
-            <tr>
-                <td>{{ thank.TksBy }}</td>
+        <tbody id="thanksList">
+            {% for thank in thanks %}
+            <tr class="thank-item" 
+                data-tksby="{{ thank.TksBy.id }}" 
+                data-tksfor="{{ thank.TksFor.id }}">
+                <td><img src="{{ asset('img/avatar/' ~ thank.TksBy.img) }}" alt="User Avatar" class="user-avatar"> {{ thank.TksBy.name }}</td>
                 <td>{{ thank.Text }}</td>
-                <td>{{ thank.TksFor }}</td>
+                <td><img src="{{ asset('img/avatar/' ~ thank.TksFor.img ) }}" alt="User Avatar" class="user-avatar"> {{ thank.TksFor.name }}</td>
                 <td>{{ thank.TkDate ? thank.TkDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                <div class="button-section">
-                    <a href="{{ path('app_thanks_edit', {'id': thank.id}) }}">Edit</a>
+                    <div class="button-section">
+                        <a href="{{ path('app_thanks_edit', {'id': thank.id}) }}">Modifier</a>
+                        <a href="{{ path('app_thanks_delete', {'id': thank.id}) }}" 
+                           onsubmit="return confirm('êtes-vous sûr de vouloir supprimer ce Merci ?');">Supprimer</a>
                     </div>
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
                 <td colspan="5" class="text-section">Il n'y a pas de "merci" dans la base de donnée</td>
             </tr>
-            
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
-        <br>
-    </div>
+    <br>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        // Filter the "Thanks" list based on the selected user
+        function filterThanks() {
+            var userId = document.getElementById('userFilter').value;
+            var rows = document.querySelectorAll('#thanksList .thank-item');
+
+            rows.forEach(function(row) {
+                var tksById = row.getAttribute('data-tksby');
+                var tksForId = row.getAttribute('data-tksfor');
+
+                // Show row if it matches the selected user as either the one who gave or received thanks
+                if (userId === "" || tksById == userId || tksForId == userId) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
 {% endblock %}
