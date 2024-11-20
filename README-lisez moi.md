@@ -4,11 +4,11 @@ I.) La Réalisation
 
 I.a) La mise en place de docker et du projet Symfony 
 
-je dois admèttre que la dernière fois que j'ai crée mon propre container docker pour travailler sur un projet Symfony cela remonte à plus de deux ans.<br>
+Je dois admèttre que la dernière fois que j'ai crée mon propre container docker pour travailler sur un projet Symfony cela remonte à plus de deux ans.
 En effet toutes les fois où j'ai travailler sur des projets Symfony après mon apprentissage initial, on me fournissais une base docker complète voir même des projets déjà entamé, 
 donc repartir de zéro été vraiment intéréssant mais légèrement chalengent 
-Il m'a fallut beaucoup de recherches et essais pour arriver à une base "fonctionnel". (environ 6h) 
-J'ai bien conscience que la base (docker) de mon projet n'est clairement pas la plus "propre" ni même conventionnel mais cet exercice m'a permis d'en prendre conscience.
+Il m'a fallut beaucoup de recherches et essais pour arriver à une base "fonctionnel" (environ 6h). 
+J'ai bien conscience que la base (docker + le squelette de projet symfony) de mon projet n'est clairement pas la plus "propre" ni même conventionnel mais cet exercice m'a permis d'en prendre conscience.
 Dans les prochains jours je vais m'attelé a rafraichir mes compétences dans ce dommaine.
 
 I.b) base fonctionnel du projet 
@@ -21,16 +21,38 @@ I.c) Les ajouts
 
 J'ai voulu suivre les "nice to have", je me suis orienté sur ces points : 
 <br>
--l’appli est jolie et utilise les avatars des salariés (fournis) <br>
--Je peux modifier un merci que j’ai créé <br>
--Je peux supprimer un merci que j’ai créé <br>
--Je peux filtrer la liste pour voiruniquement les mercis qui me concernent<br>
+- l’appli est jolie et utilise les avatars des salariés (fournis) <br>
+- Je peux modifier un merci que j’ai créé <br>
+- Je peux supprimer un merci que j’ai créé <br>
+- Je peux filtrer la liste pour voiruniquement les mercis qui me concernent<br>
 
 mais n'arrivant pas à crée une page de connexion fonctionnel et donc une identification de l'utilisateur, je me suis rabattu sur un fonctionnement généraliste de la modification, la suppression et la filtration des merci.
 j'ai aussi choisi de rajouter une page d'acceuil et une page qui liste les différents utilisateurs disponible dans cette application avec la possibilité de modifier leurs nom , mots de passe et lien vers leurs images d'avatar
 Touts ces ajouts m'ont pris un temps plus important que je ne pensais (5h environ) tandis que les multiples essaies pour ajouter et faire fonctionner la page de connexion et l'identification de l'utilisateur sans succès 
-ont fini ma journée d'hier (un peu plus de 3h30).
+ont fini ma journée d'hier (plus de 3h30).
 
-II. la mise en place du projet pour pouvoir le tester 
+II.) la mise en place du projet pour pouvoir le tester 
 
-...
+Pré-requis : <br>
+- être sur un kernel linux (mac ou distro-linux de votre choix)  <br>
+- avoir php (^7.0.0) d'installer sur votre machine <br>
+- avoir le "composer symfony" d'installer sur votre machine <br>
+- avoir le "cli symfony" d'installer sur votre machine <br>
+- avoir docker d'installer sur votre machine <br>
+
+II.a) la mise en place du projet
+ 
+- fait un git clone du proget ou aller le récupérer sur dropbox <br>
+- ce déplacer dans le dossier SymfonyProject ```cd SymfonyProject ``` <br>
+- je vous conseil de vous donner les privilèges sudo pour être sûr que tout fonctionne bien ```sudo su ``` par la suite vous taper votre MDP <br>
+- executer le script "lauch-all" ```./launch-all.sh```<br>
+- attendre jusqu'a temps que le terminal spécifie "Setup complete." <br>
+- aller dans votre navigateur internet et taper "localhost:8000" <br>
+- naviger comme vous le souhaitez <br>
+
+si vous voulais voir la base de donnée et la modifier directement <br>
+
+- taper dans votre navigateur "localhost:8081" <br>
+- pour ce connecter login=>root password=>root <br>
+- cliquer sur la base de donnée dans le coins en haut a gauche "symfony" <br>
+- inspecter et modifier ce que vous souhaitez <br>
