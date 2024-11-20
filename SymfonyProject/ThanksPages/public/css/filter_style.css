@@ -1,0 +1,31 @@
+.filter-section {
+    margin: 20px auto; /* Center the section */
+    text-align: center; /* Align content to the center */
+    font-family: Arial, sans-serif;
+}
+
+.filter-section label {
+    font-size: 18px;
+    color: #556677; /* Same text color as .text-section */
+    margin-right: 10px; /* Space between label and select */
+}
+
+.filter-section select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white; /* Matches the body background */
+    color: #556677; /* Matches the text-section color */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth hover effect */
+}
+
+.filter-section select:hover {
+    border-color: #f8af7f; /* Matches button and table header hover */
+}
+
+.filter-section select:focus {
+    outline: none;
+    border-color: #f37929; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(243, 121, 41, 0.5); /* Glow effect */
+}
