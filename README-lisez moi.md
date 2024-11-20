@@ -1,58 +1,85 @@
-Bonjour voici un "rapport" sur comment c'est passer la réalisation de cet exercice d'un part et puis comment vous pouvais le lancer pour aller vérifier la qualité de ce que j'ai réaliser <br>
+<h1> Rapport sur la réalisation de l'exercice </h1>
 
-I.) La Réalisation 
+Bonjour, voici un "rapport" sur la réalisation de cet exercice et sur la manière de le lancer pour vérifier la qualité de ce que j'ai réalisé.
 
-I.a) La mise en place de docker et du projet Symfony 
 
-Je dois admèttre que la dernière fois que j'ai crée mon propre container docker pour travailler sur un projet Symfony cela remonte à plus de deux ans.
-En effet toutes les fois où j'ai travailler sur des projets Symfony après mon apprentissage initial, on me fournissais une base docker complète voir même des projets déjà entamé, 
-donc repartir de zéro été vraiment intéréssant mais légèrement chalengent 
-Il m'a fallut beaucoup de recherches et essais pour arriver à une base "fonctionnel" (environ 6h). 
-J'ai bien conscience que la base (docker + le squelette de projet symfony) de mon projet n'est clairement pas la plus "propre" ni même conventionnel mais cet exercice m'a permis d'en prendre conscience.
-Dans les prochains jours je vais m'attelé a rafraichir mes compétences dans ce dommaine.
+<h2>I.) La réalisation </h2>
 
-I.b) base fonctionnel du projet 
+I.a) La mise en place de Docker et du projet Symfony
 
-Dès lors que mon projet symfony était lancé et qu'il fonctionner de paire avec ma base de donnée, il ne m'a fallut que peu de temps (2h30 maximum) 
-pour avoir un PMV (produit minimal viable) qui correspondé au "Must have" de l'exercice.
-Au vue du délai que vous m'avier accorder je me suis dit qu'il été intéréssant que j'essaie de rajouter quelques fonctionnalités et mettre un peu d'éfforts dans la présentation générale de ce projet 
+Je dois admettre que la dernière fois que j'ai créé mon propre conteneur Docker pour travailler sur un projet Symfony remonte à plus de deux ans.
+
+En effet, toutes les fois où j'ai travaillé sur des projets Symfony après mon apprentissage initial, on me fournissait une base Docker complète, voire même des projets déjà entamés.
+Repartir de zéro a donc été vraiment intéressant, mais légèrement challengeant.
+
+Il m'a fallu beaucoup de recherches et d'essais pour arriver à une base "fonctionnelle" (environ 6 heures).
+Je suis conscient que la base (Docker + le squelette de projet Symfony) de mon projet n'est clairement ni la plus "propre" ni la plus conventionnelle, mais cet exercice m'a permis de m'en rendre compte.
+Dans les prochains jours, je vais m'atteler à rafraîchir mes compétences dans ce domaine.
+
+I.b) Base fonctionnelle du projet
+
+Une fois que mon projet Symfony était lancé et qu'il fonctionnait avec ma base de données, il ne m'a fallu que peu de temps (2h30 maximum) pour avoir un PMV (Produit Minimal Viable) correspondant au "Must have" de l'exercice.
+Au vu du délai que vous m'aviez accordé, je me suis dit qu'il serait intéressant d'essayer de rajouter quelques fonctionnalités et de mettre un peu d'effort dans la présentation générale de ce projet.
 
 I.c) Les ajouts
 
-J'ai voulu suivre les "nice to have", je me suis orienté sur ces points : 
-<br>
-- l’appli est jolie et utilise les avatars des salariés (fournis) <br>
-- Je peux modifier un merci que j’ai créé <br>
-- Je peux supprimer un merci que j’ai créé <br>
-- Je peux filtrer la liste pour voiruniquement les mercis qui me concernent<br>
+J'ai voulu suivre les "nice to have". Je me suis orienté vers les points suivants :
 
-mais n'arrivant pas à crée une page de connexion fonctionnel et donc une identification de l'utilisateur, je me suis rabattu sur un fonctionnement généraliste de la modification, la suppression et la filtration des merci.
-j'ai aussi choisi de rajouter une page d'acceuil et une page qui liste les différents utilisateurs disponible dans cette application avec la possibilité de modifier leurs nom , mots de passe et lien vers leurs images d'avatar
-Touts ces ajouts m'ont pris un temps plus important que je ne pensais (5h environ) tandis que les multiples essaies pour ajouter et faire fonctionner la page de connexion et l'identification de l'utilisateur sans succès 
-ont fini ma journée d'hier (plus de 3h30).
+- L’application est jolie et utilise les avatars des salariés (fournis).
+- Je peux modifier un "merci" que j’ai créé.
+- Je peux supprimer un "merci" que j’ai créé.
+- Je peux filtrer la liste pour voir uniquement les mercis qui me concernent.
 
-II.) la mise en place du projet pour pouvoir le tester 
+Cependant, n'arrivant pas à créer une page de connexion fonctionnelle et donc une identification de l'utilisateur, je me suis rabattu sur un fonctionnement généraliste pour la modification, la suppression et la filtration des "mercis".
 
-Pré-requis : <br>
-- être sur un kernel linux (mac ou distro-linux de votre choix)  <br>
-- avoir php (^7.0.0) d'installer sur votre machine <br>
-- avoir le "composer symfony" d'installer sur votre machine <br>
-- avoir le "cli symfony" d'installer sur votre machine <br>
-- avoir docker d'installer sur votre machine <br>
+J'ai également choisi de rajouter une page d'accueil et une page listant les différents utilisateurs disponibles dans cette application, avec la possibilité de modifier leurs noms, mots de passe et liens vers leurs images d'avatar.
 
-II.a) la mise en place du projet
+Tous ces ajouts m'ont pris plus de temps que je ne l'avais anticipé (environ 5 heures), tandis que les multiples essais pour ajouter et faire fonctionner la page de connexion et l'identification de l'utilisateur sans succès ont fini par consommer ma journée d'hier (plus de 3h30).
+
+
+<h2> II. La mise en place du projet pour pouvoir le tester </h2> 
  
-- fait un git clone du proget ou aller le récupérer sur dropbox <br>
-- ce déplacer dans le dossier SymfonyProject ```cd SymfonyProject ``` <br>
-- je vous conseil de vous donner les privilèges sudo pour être sûr que tout fonctionne bien ```sudo su ``` par la suite vous taper votre MDP <br>
-- executer le script "lauch-all" ```./launch-all.sh```<br>
-- attendre jusqu'a temps que le terminal spécifie "Setup complete." <br>
-- aller dans votre navigateur internet et taper "localhost:8000" <br>
-- naviger comme vous le souhaitez <br>
+Pré-requis :
 
-si vous voulais voir la base de donnée et la modifier directement <br>
+- Être sur un kernel Linux (Mac ou distribution Linux de votre choix).
+- Avoir PHP (^7.0.0) installé sur votre machine.
+- Avoir le "composer Symfony" installé sur votre machine.
+- Avoir le "CLI Symfony" installé sur votre machine.
+- Avoir Docker installé sur votre machine.
 
-- taper dans votre navigateur "localhost:8081" <br>
-- pour ce connecter login=>root password=>root <br>
-- cliquer sur la base de donnée dans le coins en haut a gauche "symfony" <br>
-- inspecter et modifier ce que vous souhaitez <br>
+II.a) La mise en place du projet
+
+Faites un git clone du projet ou récupérez-le sur Dropbox :
+
+    git clone <url-du-projet>
+
+Déplacez-vous dans le dossier SymfonyProject :
+
+    cd SymfonyProject
+
+Donnez-vous les privilèges sudo pour être sûr que tout fonctionne bien :
+
+    sudo su
+
+(Puis tapez votre mot de passe).
+Exécutez le script launch-all :
+
+    ./launch-all.sh
+
+Attendez que le terminal affiche "Setup complete".
+    
+Ouvrez votre navigateur Internet et tapez localhost:8000.
+
+Naviguez comme vous le souhaitez.
+
+<h3>Si vous souhaitez voir la base de données et la modifier directement : </h3>
+
+Tapez dans votre navigateur : localhost:8081.
+
+    Connectez-vous :
+        Login : root
+        Password : root
+        
+Cliquez sur la base de données dans le coin en haut à gauche ("symfony").
+
+Inspectez et modifiez ce que vous souhaitez.
