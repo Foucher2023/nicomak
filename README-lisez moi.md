@@ -20,10 +20,11 @@ Au vue du délai que vous m'avier accorder je me suis dit qu'il été intéréss
 I.c) Les ajouts
 
 J'ai voulu suivre les "nice to have", je me suis orienté sur ces points : 
--l’appli est jolie et utilise les avatars des salariés (fournis)
--Je peux modifier un merci que j’ai créé
--Je peux supprimer un merci que j’ai créé
--Je peux filtrer la liste pour voiruniquement les mercis qui me concernent
+<br>
+-l’appli est jolie et utilise les avatars des salariés (fournis) <br>
+-Je peux modifier un merci que j’ai créé <br>
+-Je peux supprimer un merci que j’ai créé <br>
+-Je peux filtrer la liste pour voiruniquement les mercis qui me concernent<br><br>
 
 mais n'arrivant pas à crée une page de connexion fonctionnel et donc une identification de l'utilisateur, je me suis rabattu sur un fonctionnement généraliste de la modification, la suppression et la filtration des merci.
 j'ai aussi choisi de rajouter une page d'acceuil et une page qui liste les différents utilisateurs disponible dans cette application avec la possibilité de modifier leurs nom , mots de passe et lien vers leurs images d'avatar
